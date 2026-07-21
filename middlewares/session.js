@@ -8,9 +8,10 @@ const TWOFA_SESSION_COOKIE_NAME = 'twofa_session';
 const ONE_YEAR = 60 * 60 * 24 * 365;
 const ONE_DAY = 60 * 60 * 24;
 
-export const redis = createClient({ 
-    socket: { host: process.env.REDIS_URL,}
+export const redis = createClient({
+  url: process.env.REDIS_URL
 });
+
 await redis.connect();
 
 export async function setSession(req, reply, username) {
