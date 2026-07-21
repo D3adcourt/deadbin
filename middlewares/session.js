@@ -9,8 +9,7 @@ const ONE_YEAR = 60 * 60 * 24 * 365;
 const ONE_DAY = 60 * 60 * 24;
 
 export const redis = createClient({ 
-    socket: { host: process.env.REDIS_HOST, port: parseInt(process.env.REDIS_PORT) },
-    password: process.env.REDIS_PASSWORD
+    socket: { host: process.env.REDIS_URL,}
 });
 await redis.connect();
 
