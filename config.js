@@ -49,7 +49,7 @@ export async function loadStyles(fastify) {
         }
         styles = wrapObj(obj);
     } catch (err) {
-        fastify.log.error('Error loading styles:', err);
+        console.error("Error loading styles:", err )
     }
 }
 
